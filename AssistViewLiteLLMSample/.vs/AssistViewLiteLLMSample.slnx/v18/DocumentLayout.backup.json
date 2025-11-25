@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|d:\\popupperformance\\how-to-integrate-litellm-with-ai-assistview\\assistviewlitellmsample\\assistviewlitellmsample\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|solutionrelative:assistviewlitellmsample\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|d:\\popupperformance\\how-to-integrate-litellm-with-ai-assistview\\assistviewlitellmsample\\assistviewlitellmsample\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|solutionrelative:assistviewlitellmsample\\views\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|d:\\popupperformance\\how-to-integrate-litellm-with-ai-assistview\\assistviewlitellmsample\\assistviewlitellmsample\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|solutionrelative:assistviewlitellmsample\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|d:\\popupperformance\\how-to-integrate-litellm-with-ai-assistview\\assistviewlitellmsample\\assistviewlitellmsample\\viewmodels\\viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|solutionrelative:assistviewlitellmsample\\viewmodels\\viewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|d:\\popupperformance\\how-to-integrate-litellm-with-ai-assistview\\assistviewlitellmsample\\assistviewlitellmsample\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|solutionrelative:assistviewlitellmsample\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|d:\\popupperformance\\how-to-integrate-litellm-with-ai-assistview\\assistviewlitellmsample\\assistviewlitellmsample\\models\\extendedassistitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|solutionrelative:assistviewlitellmsample\\models\\extendedassistitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|d:\\popupperformance\\how-to-integrate-litellm-with-ai-assistview\\assistviewlitellmsample\\assistviewlitellmsample\\assistviewlitellmsample.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|solutionrelative:assistviewlitellmsample\\assistviewlitellmsample.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|d:\\popupperformance\\how-to-integrate-litellm-with-ai-assistview\\assistviewlitellmsample\\assistviewlitellmsample\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6416BDFC-A755-4985-97B3-7138CA72FA67}|AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj|solutionrelative:assistviewlitellmsample\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\App.xaml.cs",
+              "RelativeDocumentMoniker": "AssistViewLiteLLMSample\\App.xaml.cs",
+              "ToolTip": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\App.xaml.cs*",
+              "RelativeToolTip": "AssistViewLiteLLMSample\\App.xaml.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T18:18:21.152Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "AssistViewLiteLLMSample\\MauiProgram.cs",
+              "ToolTip": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\MauiProgram.cs",
+              "RelativeToolTip": "AssistViewLiteLLMSample\\MauiProgram.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T18:17:47.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ExtendedAssistItem.cs",
+              "DocumentMoniker": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\Models\\ExtendedAssistItem.cs",
+              "RelativeDocumentMoniker": "AssistViewLiteLLMSample\\Models\\ExtendedAssistItem.cs",
+              "ToolTip": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\Models\\ExtendedAssistItem.cs",
+              "RelativeToolTip": "AssistViewLiteLLMSample\\Models\\ExtendedAssistItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T18:16:25.73Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ViewModel.cs",
+              "DocumentMoniker": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\ViewModels\\ViewModel.cs",
+              "RelativeDocumentMoniker": "AssistViewLiteLLMSample\\ViewModels\\ViewModel.cs",
+              "ToolTip": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\ViewModels\\ViewModel.cs",
+              "RelativeToolTip": "AssistViewLiteLLMSample\\ViewModels\\ViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T18:15:28.125Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\Views\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "AssistViewLiteLLMSample\\Views\\MainPage.xaml.cs",
+              "ToolTip": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\Views\\MainPage.xaml.cs",
+              "RelativeToolTip": "AssistViewLiteLLMSample\\Views\\MainPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-25T18:15:09.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\Views\\MainPage.xaml",
+              "RelativeDocumentMoniker": "AssistViewLiteLLMSample\\Views\\MainPage.xaml",
+              "ToolTip": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\Views\\MainPage.xaml",
+              "RelativeToolTip": "AssistViewLiteLLMSample\\Views\\MainPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA/AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-25T18:14:26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AssistViewLiteLLMSample",
+              "DocumentMoniker": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj",
+              "RelativeDocumentMoniker": "AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj",
+              "ToolTip": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj",
+              "RelativeToolTip": "AssistViewLiteLLMSample\\AssistViewLiteLLMSample.csproj",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAD4AAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-25T18:14:44.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "App.xaml",
+              "DocumentMoniker": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\App.xaml",
+              "RelativeDocumentMoniker": "AssistViewLiteLLMSample\\App.xaml",
+              "ToolTip": "D:\\PopupPerformance\\How-to-integrate-LiteLLM-with-AI-AssistView\\AssistViewLiteLLMSample\\AssistViewLiteLLMSample\\App.xaml",
+              "RelativeToolTip": "AssistViewLiteLLMSample\\App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-25T18:14:54.004Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

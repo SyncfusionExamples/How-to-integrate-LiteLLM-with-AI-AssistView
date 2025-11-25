@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:syncfusion="clr-namespace:Syncfusion.Maui.AIAssistView;assembly=Syncfusion.Maui.AIAssistView"
+             xmlns:local="clr-namespace:AssistViewLiteLLMSample"
+             x:Class="AssistViewLiteLLMSample.MainPage"
+             BackgroundColor="{AppThemeBinding Light=#F9F9F9, Dark=#1E1E1E}">
+    <ContentPage.BindingContext>
+        <local:GettingStartedViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <DataTemplate x:Key="HeaderTemplate">
+                <Grid RowDefinitions="47,36"
+                      RowSpacing="12"
+                      Padding="10">
+                    <Border BackgroundColor="#6A0DAD"
+                            Stroke="{AppThemeBinding Light=#E0E0E0, Dark=#555555}"
+                            HorizontalOptions="Center">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="11" />
+                        </Border.StrokeShape>
+                        <Label Text="&#xe7e1;"
+                               FontSize="24"
+                               HorizontalTextAlignment="Center"
+                               VerticalTextAlignment="Center"
+                               FontFamily="MauiSampleFontIcon"
+                               TextColor="White"
+                               HeightRequest="45"
+                               WidthRequest="45"
+                               HorizontalOptions="Center" />
+                    </Border>
+                    <Label Text="How can I Assist you?"
+                           Grid.Row="1"
+                           HorizontalOptions="Center"
+                           FontFamily="Roboto-Regular"
+                           FontSize="24" />
+                </Grid>
+            </DataTemplate>
+            <DataTemplate x:Key="ResponseItemTemplate">
+                <WebView HeightRequest="350" Margin="10">
+                    <WebView.Source>
+                        <HtmlWebViewSource Html="{Binding HtmlText}" />
+                    </WebView.Source>
+                </WebView>
+            </DataTemplate>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid Padding="20">
+        <Border Stroke="#D3D3D3"
+                StrokeThickness="1"
+                BackgroundColor="White"
+                Padding="20">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="12" />
+            </Border.StrokeShape>
+            <syncfusion:SfAIAssistView x:Name="assistView"
+                                       AssistItems="{Binding AssistItems}"
+                                       RequestCommand="{Binding AssistViewRequestCommand}"
+                                       ShowHeader="True"
+                                       AllowTextSelection="True"
+                                       HeaderTemplate="{StaticResource HeaderTemplate}"
+                                       ResponseItemTemplate="{StaticResource ResponseItemTemplate}"
+                                       BackgroundColor="White"
+                                       ShowResponseLoader="True" />
+        </Border>
+    </Grid>
+</ContentPage>
