@@ -1,25 +1,28 @@
 # How-to-integrate-LiteLLM-with-AI-AssistView
 This demo shows how to integrate LiteLLM with .NET MAUI AI AssistView.
 
-Introduction
-Integrating LiteLLM with Syncfusion MAUI AI AssistView empowers developers to deliver intelligent, responsive, and scalable AI-driven experiences in .NET applications. This blog provides a clear, customer-focused guide to setting up LiteLLM with AI AssistView, ensuring smooth integration and optimal performance.
-
-Why LiteLLM with AI AssistView?
-LiteLLM acts as a lightweight proxy that supports multiple AI models like OpenAI, Azure OpenAI, Anthropic with minimal configuration. When combined with AI AssistView, it enables:
-•	Multi-model flexibility: Switch between AI providers easily.
+## Introduction
+Imagine building a .NET MAUI app where users expect intelligent responses without delays or complexity. You want to integrate AI, but managing multiple models and ensuring a seamless, responsive UI can feel overwhelming.
+Enter LiteLLM and Syncfusion® .NET MAUI AI AssistView—a powerful duo that turns complexity into simplicity.
+LiteLLM acts as a lightweight proxy for multiple AI models like OpenAI, Azure OpenAI, and Anthropic, requiring minimal configuration. Meanwhile, AI AssistView provides an interactive, user-friendly interface for handling queries. Together, they enable dynamic, AI-powered experiences across all your app’s supported platforms—delivering scalability, security, and responsiveness without the headaches.
+In this blog, we will guide you through integrating LiteLLM in AI AssistView step by step, ensuring a smooth setup and optimal performance.
+When combined with AI AssistView, LiteLLM enables:
+•	Multi-model flexibility: Switch between AI providers effortlessly.
 •	Secure API calls: Centralized configuration for keys and endpoints.
 •	Enhanced user experience: Real-time, contextual responses in your MAUI app.
-•	Scalability: Handle multiple requests efficiently.
+•	Scalability: Manage multiple requests efficiently without performance issues.
 
-Integrating LiteLLM with the .NET MAUI app
-Step 1: Install LiteLLM
+
+
+## Integrating LiteLLM with the .NET MAUI app
+### Install LiteLLM
 
 LiteLLM acts as a middleware for AI models. Install it using pip:
 
 $ pip install litellm
 Verify installation:
   $ litellm --version
-Step 2: Create a configuration file
+### Create a configuration file
 Create a configuraton file: litellm_config.yaml
 Content:
 ---
@@ -36,7 +39,7 @@ router_settings:
 
 debug: true
 ---
-Step 3: Start LiteLLM Proxy
+### Start LiteLLM Proxy
 Open a new PowerShell window and run the proxy to route requests:
   $ cd "CONFIGURATION_FILE_LOCATION"
   $ litellm --config "litellm_config.yaml" --port 4000
@@ -49,10 +52,12 @@ After you run the command, you should see messages like:
 
  
 
-Integrate LiteLLM with AI AssistView 
+## Integrate LiteLLM with AI AssistView 
 
-Step 1: Handle AssistView Request
+### Handle AssistView Request
 Use the following C# method to capture the user query from AI AssistView:
+
+```
     /// <summary>
     /// Handles the AssistView request event when user submits a query.
     /// </summary>
@@ -63,9 +68,11 @@ Use the following C# method to capture the user query from AI AssistView:
             await ProcessUserQuery(request);
         }
     }
+```
 
-Step 2: Process the User Query 
+### Process the User Query 
 This method sends the query to LiteLLM, formats the response, and updates the UI:
+```
     /// <summary>
     /// Processes a user query: calls API, formats response, updates UI.
     /// </summary>
@@ -103,9 +110,9 @@ This method sends the query to LiteLLM, formats the response, and updates the UI
             });
         }
     }
-
-Step 3: Send Request to LiteLLM
-
+```
+### Send Request to LiteLLM
+```
     /// <summary>
     /// Sends request to LiteLLM proxy and retrieves AI response.
     /// Includes comprehensive error handling for various failure scenarios.
@@ -116,10 +123,6 @@ Step 3: Send Request to LiteLLM
         {
             var httpHandler = new HttpClientHandler();
 
-#if DEBUG
-            httpHandler.ServerCertificateCustomValidationCallback =
-                (message, cert, chain, errors) => true;
-#endif
 
             using var httpClient = new HttpClient(httpHandler)
             {
@@ -137,53 +140,25 @@ Step 3: Send Request to LiteLLM
                 max_tokens = 2048       // Maximum response length
             };
 
-            var jsonPayload = JsonSerializer.Serialize(requestPayload);
-            var httpContent = new StringContent(
-                jsonPayload,
-                Encoding.UTF8,
-                "application/json"
-            );
-
-            httpClient.DefaultRequestHeaders.Add("Connection", "keep-alive");
-            httpClient.DefaultRequestHeaders.Add("User-Agent", "AssistViewSample/1.0");
+            .....
 
             // Send POST request to LiteLLM
             var httpResponse = await httpClient.PostAsync(LiteLLMEndpoint, httpContent);
 
-            if (!httpResponse.IsSuccessStatusCode)
-            {
-                return HandleHttpError(httpResponse);
-            }
+            .....
 
-            string responseBody = await httpResponse.Content.ReadAsStringAsync();
-
-            if (string.IsNullOrWhiteSpace(responseBody))
-            {
-                return "No response received from the API.";
-            }
-
-            return ExtractMessageFromResponse(responseBody);
-        }
-        catch (HttpRequestException ex)
-        {
-            return HandleConnectionError(ex);
-        }
-        catch (TaskCanceledException)
-        {
-            return $"Request timeout after {HttpTimeoutSeconds} seconds. Please try again.";
-        }
-        catch (JsonException ex)
-        {
-            return $"Failed to parse API response: {ex.Message}";
-        }
-        catch (Exception ex)
-        {
-            return $"Unexpected error: {ex.GetType().Name} - {ex.Message}";
         }
     }
 
-    var json = await response.Content.ReadAsStringAsync();
-    using var doc = JsonDocument.Parse(json);
-    return doc.RootElement.GetProperty("choices")[0].GetProperty("message").GetProperty("content").GetString();
-}
+```
+
+## Requirements to run the demo
+To run the demo, refer to [System Requirements for .NET MAUI](https://help.syncfusion.com/maui/system-requirements)
+
+## Troubleshooting:
+### Path too long exception
+If you are facing path too long exception when building this example project, close Visual Studio and rename the repository to short and build the project.
+
+## License
+Syncfusion® has no liability for any damage or consequence that may arise from using or viewing the samples. The samples are for demonstrative purposes. If you choose to use or access the samples, you agree to not hold Syncfusion® liable, in any form, for any damage related to use, for accessing, or viewing the samples. By accessing, viewing, or seeing the samples, you acknowledge and agree Syncfusion®'s samples will not allow you seek injunctive relief in any form for any claim related to the sample. If you do not agree to this, do not view, access, utilize, or otherwise do anything with Syncfusion®'s samples.
 

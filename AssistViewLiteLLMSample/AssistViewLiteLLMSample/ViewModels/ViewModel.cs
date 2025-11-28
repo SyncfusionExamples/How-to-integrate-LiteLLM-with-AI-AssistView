@@ -203,7 +203,7 @@ public class GettingStartedViewModel : INotifyPropertyChanged
                 if (firstChoice.TryGetProperty("message", out var messageObj) &&
                     messageObj.TryGetProperty("content", out var contentElement))
                 {
-                    string content = contentElement.GetString();
+                    string? content = contentElement.GetString();
                     if (!string.IsNullOrWhiteSpace(content))
                     {
                         return content;
