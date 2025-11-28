@@ -1,16 +1,18 @@
 # How-to-integrate-LiteLLM-with-AI-AssistView
-This demo shows how to integrate LiteLLM with .NET MAUI AI AssistView.
+This demo shows how to integrate  **LiteLLM** in **Syncfusion® .NET MAUI AI AssistView**
 
 ## Introduction
 Imagine building a .NET MAUI app where users expect intelligent responses without delays or complexity. You want to integrate AI, but managing multiple models and ensuring a seamless, responsive UI can feel overwhelming.
-Enter LiteLLM and Syncfusion® .NET MAUI AI AssistView—a powerful duo that turns complexity into simplicity.
+Enter **LiteLLM** and **Syncfusion® .NET MAUI AI AssistView** — a powerful duo that turns complexity into simplicity.
+
 LiteLLM acts as a lightweight proxy for multiple AI models like OpenAI, Azure OpenAI, and Anthropic, requiring minimal configuration. Meanwhile, AI AssistView provides an interactive, user-friendly interface for handling queries. Together, they enable dynamic, AI-powered experiences across all your app’s supported platforms—delivering scalability, security, and responsiveness without the headaches.
+
 In this blog, we will guide you through integrating LiteLLM in AI AssistView step by step, ensuring a smooth setup and optimal performance.
 When combined with AI AssistView, LiteLLM enables:
-•	Multi-model flexibility: Switch between AI providers effortlessly.
-•	Secure API calls: Centralized configuration for keys and endpoints.
-•	Enhanced user experience: Real-time, contextual responses in your MAUI app.
-•	Scalability: Manage multiple requests efficiently without performance issues.
+- **Multi-model flexibility:** Switch between AI providers effortlessly.
+- **Secure API calls:** Centralized configuration for keys and endpoints.
+- **Enhanced user experience:** Real-time, contextual responses in your MAUI app.
+- **Scalability:** Manage multiple requests efficiently without performance issues.
 
 
 
@@ -20,25 +22,36 @@ When combined with AI AssistView, LiteLLM enables:
 LiteLLM acts as a middleware for AI models. Install it using pip:
 
 $ pip install litellm
+
 Verify installation:
-  $ litellm --version
+
+$ litellm --version
+  
 ### Create a configuration file
 Create a configuraton file: litellm_config.yaml
+
+
 Content:
+
 ---
 model_list:
   - model_name: YOUR_MODEL_NAME
     litellm_params:
-      model: “YOUR_MODEL”
+      model: "YOUR_MODEL"
       api_base: "YOUR_API_BASE"
       api_key: "YOUR_AZURE_API_KEY_HERE"
       api_version: "API_VERSION"
 
 router_settings:
- enable_router_logging: true
+  enable_router_logging: true
 
 debug: true
+
+
 ---
+
+
+
 ### Start LiteLLM Proxy
 Open a new PowerShell window and run the proxy to route requests:
   $ cd "CONFIGURATION_FILE_LOCATION"
