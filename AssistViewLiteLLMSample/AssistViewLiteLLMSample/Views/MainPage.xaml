@@ -46,8 +46,28 @@
             </DataTemplate>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid Padding="20">
-        <Border Stroke="#D3D3D3"
+    <Grid Padding="20" RowDefinitions="Auto,*" RowSpacing="12">
+        <!-- Model selector panel -->
+        <Border Grid.Row="0" BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#2A2A2A}" Stroke="#D3D3D3" StrokeThickness="1" Padding="12" >
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="10" />
+            </Border.StrokeShape>
+            <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="10" VerticalOptions="Center">
+                <Label Text="Model" VerticalOptions="Center" FontAttributes="Bold" />
+                <Picker Grid.Column="1"
+                        Title="Select an AI model"
+                        ItemsSource="{Binding Models}"
+                        SelectedItem="{Binding SelectedModel}"
+                        HorizontalOptions="Fill" />
+                <Label Grid.Column="2"
+                       Text="{Binding SelectedModel}"
+                       TextColor="#6A0DAD"
+                       VerticalOptions="Center"
+                       FontAttributes="Italic" />
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="1" Stroke="#D3D3D3"
                 StrokeThickness="1"
                 BackgroundColor="White"
                 Padding="20">

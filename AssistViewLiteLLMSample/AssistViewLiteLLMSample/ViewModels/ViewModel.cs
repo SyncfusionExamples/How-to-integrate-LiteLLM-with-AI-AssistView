@@ -13,7 +13,11 @@ using System.Text.RegularExpressions;
 
 namespace AssistViewLiteLLMSample;
 
-
+/// <summary>
+/// ViewModel driving the Syncfusion SfAIAssistView sample.
+/// Responsible for: maintaining conversation items, handling request execution,
+/// switching LiteLLM models, and formatting responses for display.
+/// </summary>
 public class GettingStartedViewModel : INotifyPropertyChanged
 {
 
@@ -21,18 +25,48 @@ public class GettingStartedViewModel : INotifyPropertyChanged
     /// <summary>
     /// Android Emulator uses 10.0.2.2 as gateway to host machine.
     /// </summary>
-    private const string LiteLLMEndpoint = "http://10.0.2.2:4000/v1/chat/completions";
+    private const string LiteLLMEndpoint = "YOUR_LOCAL_HOST_LITELLM_PROXY_ENDPOINT";
 #else
     /// <summary>
     /// Windows/Desktop uses localhost for LiteLLM proxy.
     /// </summary>
-    private const string LiteLLMEndpoint = "http://localhost:4000/v1/chat/completions";
+   private const string LiteLLMEndpoint = "YOUR_LOCAL_HOST_LITELLM_PROXY_ENDPOINT";
 #endif
 
+
     /// <summary>
-    /// Model name must match the model_name in litellm_config.yaml.
+    /// Holds the currently selected LiteLLM model alias.
+    /// Defaults to "azure-gpt-4.1". This value should match one of the entries in the Models collection.
     /// </summary>
-    private const string ModelName = "azure-gpt-4.1";
+    private string _selectedModel = "azure-gpt-4.1";
+
+    /// <summary>
+    /// Available LiteLLM model aliases from AssistViewLiteLLMSample/config.yaml.
+    /// Keep these in sync with model_name entries in that file.
+    /// </summary>
+    public ObservableCollection<string> Models { get; } = new ObservableCollection<string>
+    {
+        //use your own models
+        "azure-gpt-4.1",
+        "azure-o3-mini"
+    };
+
+    /// <summary>
+    /// Currently selected LiteLLM model alias. Bound to the Picker in
+    /// Views/MainPage.xaml. The value must match a model_name in config.yaml.
+    /// </summary>
+    public string SelectedModel
+    {
+        get => _selectedModel;
+        set
+        {
+            if (_selectedModel != value && !string.IsNullOrWhiteSpace(value))
+            {
+                _selectedModel = value;
+                OnPropertyChanged(nameof(SelectedModel));
+            }
+        }
+    }
 
     /// <summary>
     /// HTTP request timeout in seconds. Increase for longer queries.
@@ -56,6 +90,12 @@ public class GettingStartedViewModel : INotifyPropertyChanged
     {
         AssistItems = new ObservableCollection<IAssistItem>();
         AssistViewRequestCommand = new Command<object>(ExecuteRequestCommand);
+
+        // Default to first configured model
+        if (Models.Count > 0)
+        {
+            SelectedModel = Models[0];
+        }
     }
 
     /// <summary>
@@ -127,16 +167,33 @@ public class GettingStartedViewModel : INotifyPropertyChanged
                 Timeout = TimeSpan.FromSeconds(HttpTimeoutSeconds)
             };
 
-            var requestPayload = new
-            {
-                model = ModelName,
-                messages = new[]
+            // Some Azure models (e.g., o3-mini) require 'max_completion_tokens' instead of 'max_tokens'.
+            // Build payload dynamically based on the selected model alias from config.yaml.
+            bool requiresMaxCompletionTokens = string.Equals(SelectedModel, "azure-o3-mini", StringComparison.OrdinalIgnoreCase);
+
+            object requestPayload = requiresMaxCompletionTokens
+                ? new
                 {
-                    new { role = "user", content = userPrompt }
-                },
-                temperature = 0.7,      // Balance between focused and creative
-                max_tokens = 2048       // Maximum response length
-            };
+                    model = SelectedModel,
+                    messages = new[]
+                    {
+                        new { role = "user", content = userPrompt }
+                    },
+                    // o-series models do not support 'temperature' on Chat Completions
+                    max_completion_tokens = 2048
+                    // Optional: o-series models support reasoning settings; uncomment if needed
+                    // , reasoning = new { effort = "medium" }
+                }
+                : new
+                {
+                    model = SelectedModel,
+                    messages = new[]
+                    {
+                        new { role = "user", content = userPrompt }
+                    },
+                    temperature = 0.7,
+                    max_tokens = 2048
+                };
 
             var jsonPayload = JsonSerializer.Serialize(requestPayload);
             var httpContent = new StringContent(
