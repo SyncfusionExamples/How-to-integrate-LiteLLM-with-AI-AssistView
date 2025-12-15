@@ -15,7 +15,7 @@
                       RowSpacing="12"
                       Padding="10">
                     <Border BackgroundColor="#6A0DAD"
-                            Stroke="{AppThemeBinding Light=#E0E0E0, Dark=#555555}"
+                            Stroke="#E0E0E0"
                             HorizontalOptions="Center">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="11" />
