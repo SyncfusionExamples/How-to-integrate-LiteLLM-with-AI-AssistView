@@ -240,11 +240,7 @@ then rebuild the project.
 
 ## Screenshot
 
-> _(Add screenshots of the running app here)_
-
-| Windows | Android |
-|---|---|
-| _(screenshot)_ | _(screenshot)_ |
+![LiteLLM integration with AIAssistView in .NET MAUI](LiteLLM_AIAssistView_final.gif)
 
 ---
 
