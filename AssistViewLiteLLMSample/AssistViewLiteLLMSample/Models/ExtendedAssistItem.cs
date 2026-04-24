@@ -1,6 +1,6 @@
 using Syncfusion.Maui.AIAssistView;
 
-namespace AssistViewLiteLLMSample.Models
+namespace AssistViewLiteLLMSample
 {
     /// <summary>
     /// Extended AssistItem with HTML rendering support for Markdown responses

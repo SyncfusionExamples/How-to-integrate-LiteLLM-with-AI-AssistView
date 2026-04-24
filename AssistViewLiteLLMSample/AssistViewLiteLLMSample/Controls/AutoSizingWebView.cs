@@ -8,18 +8,21 @@ namespace AssistViewLiteLLMSample
     // Auto-sizes to fit HTML content so the parent list scrolls on Android.
     public class AutoSizingWebView : WebView
     {
+        /// <summary>
+        /// Field to track whether we've already wired the Navigated event to avoid multiple subscriptions.
+        /// </summary>
+        private bool _eventsWired;
+
+        /// <summary>
+        /// Identifies the Html bindable property for the AutoSizingWebView control.
+        /// </summary>
         public static readonly BindableProperty HtmlProperty = BindableProperty.Create(
             nameof(Html), typeof(string), typeof(AutoSizingWebView), default(string),
             propertyChanged: OnHtmlChanged);
 
-        public string Html
-        {
-            get => (string)GetValue(HtmlProperty);
-            set => SetValue(HtmlProperty, value);
-        }
-
-        bool _eventsWired;
-
+        /// <summary>
+        /// Initializes a new instance of the AutoSizingWebView class with default layout and minimum height settings.
+        /// </summary>
         public AutoSizingWebView()
         {
             MinimumHeightRequest = 60;
@@ -27,13 +30,31 @@ namespace AssistViewLiteLLMSample
             HorizontalOptions = LayoutOptions.Fill;
         }
 
+        /// <summary>
+        /// Gets or sets the HTML markup to display.
+        /// </summary>
+        public string Html
+        {
+            get => (string)GetValue(HtmlProperty);
+            set => SetValue(HtmlProperty, value);
+        }
+
+        /// <summary>
+        /// Invoked when the underlying platform handler changes for this element.
+        /// </summary>
         protected override void OnHandlerChanged()
         {
             base.OnHandlerChanged();
             WireEvents();
         }
 
-        static void OnHtmlChanged(BindableObject bindable, object _, object newValue)
+        /// <summary>
+        /// Handles changes to the HTML content property and updates the web view source accordingly.
+        /// </summary>
+        /// <param name="bindable">The bindable object whose HTML property has changed. Must be an instance of AutoSizingWebView.</param>
+        /// <param name="obj">The old value of the property. This parameter is not used.</param>
+        /// <param name="newValue">The new value assigned to the HTML property. If null, an empty string is used.</param>
+        private static void OnHtmlChanged(BindableObject bindable, object obj, object newValue)
         {
             var view = (AutoSizingWebView)bindable;
             var html = (string?)newValue ?? string.Empty;
@@ -41,7 +62,10 @@ namespace AssistViewLiteLLMSample
             view.WireEvents();
         }
 
-        void WireEvents()
+        /// <summary>
+        /// Attaches the required event handlers to enable navigation event processing.
+        /// </summary>
+        private void WireEvents()
         {
             if (_eventsWired)
                 return;
@@ -51,7 +75,12 @@ namespace AssistViewLiteLLMSample
             _eventsWired = true;
         }
 
-        async void OnNavigated(object? sender, WebNavigatedEventArgs e)
+        /// <summary>
+        /// Handles the navigation event for a web view and performs layout adjustments after navigation completes.
+        /// </summary>
+        /// <param name="sender">The source of the navigation event. This is typically the web view that triggered the event.</param>
+        /// <param name="e">The event data containing information about the navigation that has occurred.</param>
+        private async void OnNavigated(object? sender, WebNavigatedEventArgs e)
         {
             try
             {
@@ -62,7 +91,11 @@ namespace AssistViewLiteLLMSample
             catch { }
         }
 
-        async Task MeasureAndResizeAsync()
+        /// <summary>
+        /// Measures the rendered height of the web content and updates the control's height accordingly.
+        /// </summary>
+        /// <returns>A task that represents the asynchronous operation.</returns>
+        private async Task MeasureAndResizeAsync()
         {
             if (Handler == null)
                 return;
@@ -94,7 +127,15 @@ namespace AssistViewLiteLLMSample
             }
         }
 
-        static string WrapHtml(string html)
+        /// <summary>
+        /// Wraps the specified HTML fragment in a minimal HTML document structure if it does not already contain an html tag.
+        /// </summary>
+        /// <remarks>This method ensures that HTML fragments are rendered consistently by providing a
+        /// standard document structure, including viewport and basic styling. If the input is null, empty, or
+        /// whitespace, an empty HTML document is returned.</remarks>
+        /// <param name="html">The HTML content to wrap. May be a full HTML document or a fragment.</param>
+        /// <returns>A complete HTML document containing the original content if it was a fragment; otherwise, the original HTML if it already contains an html tag.</returns>
+        private static string WrapHtml(string html)
         {
             // If the incoming content isn't full HTML, wrap it with basics for consistent sizing
             if (string.IsNullOrWhiteSpace(html))

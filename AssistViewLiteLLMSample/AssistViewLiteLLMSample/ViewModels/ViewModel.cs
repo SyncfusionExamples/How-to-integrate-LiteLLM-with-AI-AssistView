@@ -1,4 +1,4 @@
-using AssistViewLiteLLMSample.Models;
+using AssistViewLiteLLMSample;
 using Markdig;
 using Syncfusion.Maui.AIAssistView;
 using System;
@@ -117,11 +117,8 @@ public class GettingStartedViewModel : INotifyPropertyChanged
         try
         {
             string responseText = await GetResponseFromLiteLLMAsync(userQuery.Text);
-
             string formattedText = CleanResponseText(responseText);
-
             string htmlContent = GenerateHtmlContent(formattedText);
-
             await MainThread.InvokeOnMainThreadAsync(() =>
             {
                 AssistItems.Add(new ExtendedAssistItem
