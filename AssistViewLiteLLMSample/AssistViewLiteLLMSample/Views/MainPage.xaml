@@ -38,12 +38,11 @@
             </Grid>
         </DataTemplate>
         <DataTemplate x:Key="ResponseItemTemplate">
-            <WebView HeightRequest="350" Margin="10">
-                <WebView.Source>
-                    <HtmlWebViewSource Html="{Binding HtmlText}" />
-                </WebView.Source>
-            </WebView>
-        </DataTemplate>
+            <local:AutoSizingWebView Html="{Binding HtmlText}"
+                                     Margin="10"
+                                     VerticalOptions="Start"
+                                     HorizontalOptions="Fill" />
+</DataTemplate>
     </ResourceDictionary>
 </ContentPage.Resources>
 <Grid Padding="20" RowDefinitions="Auto,*" RowSpacing="12">
