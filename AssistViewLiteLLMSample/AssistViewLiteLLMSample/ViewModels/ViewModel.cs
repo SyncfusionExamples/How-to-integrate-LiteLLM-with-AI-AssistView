@@ -14,9 +14,7 @@ using System.Text.RegularExpressions;
 namespace AssistViewLiteLLMSample;
 
 /// <summary>
-/// ViewModel driving the Syncfusion SfAIAssistView sample.
-/// Responsible for: maintaining conversation items, handling request execution,
-/// switching LiteLLM models, and formatting responses for display.
+/// Represents the view model for the Getting Started sample, providing properties, commands, and logic to interact with LiteLLM models and manage assistant items in the UI.
 /// </summary>
 public class GettingStartedViewModel : INotifyPropertyChanged
 {
@@ -33,16 +31,13 @@ public class GettingStartedViewModel : INotifyPropertyChanged
    private const string LiteLLMEndpoint = "YOUR_LOCAL_HOST_LITELLM_PROXY_ENDPOINT";
 #endif
 
-
     /// <summary>
     /// Holds the currently selected LiteLLM model alias.
-    /// Defaults to "azure-gpt-4.1". This value should match one of the entries in the Models collection.
     /// </summary>
     private string _selectedModel = "azure-gpt-4.1";
 
     /// <summary>
     /// Available LiteLLM model aliases from AssistViewLiteLLMSample/config.yaml.
-    /// Keep these in sync with model_name entries in that file.
     /// </summary>
     public ObservableCollection<string> Models { get; } = new ObservableCollection<string>
     {
@@ -52,8 +47,7 @@ public class GettingStartedViewModel : INotifyPropertyChanged
     };
 
     /// <summary>
-    /// Currently selected LiteLLM model alias. Bound to the Picker in
-    /// Views/MainPage.xaml. The value must match a model_name in config.yaml.
+    /// Currently selected LiteLLM model alias. Bound to the Picker in Views/MainPage.xaml. The value must match a model_name in config.yaml.
     /// </summary>
     public string SelectedModel
     {
@@ -146,7 +140,6 @@ public class GettingStartedViewModel : INotifyPropertyChanged
 
     /// <summary>
     /// Sends request to LiteLLM proxy and retrieves AI response.
-    /// Includes comprehensive error handling for various failure scenarios.
     /// </summary>
     private async Task<string> GetResponseFromLiteLLMAsync(string userPrompt)
     {
@@ -239,7 +232,6 @@ public class GettingStartedViewModel : INotifyPropertyChanged
 
     /// <summary>
     /// Extracts the message content from the LiteLLM JSON response.
-    /// Navigates the response structure: choices[0].message.content
     /// </summary>
     private string ExtractMessageFromResponse(string jsonResponse)
     {
@@ -336,7 +328,6 @@ public class GettingStartedViewModel : INotifyPropertyChanged
 
     /// <summary>
     /// Generates professionally styled HTML content from Markdown text.
-    /// Includes comprehensive CSS for proper formatting and typography.
     /// </summary>
     private string GenerateHtmlContent(string markdownText)
     {
@@ -445,4 +436,3 @@ public class GettingStartedViewModel : INotifyPropertyChanged
         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
     }
 }
-

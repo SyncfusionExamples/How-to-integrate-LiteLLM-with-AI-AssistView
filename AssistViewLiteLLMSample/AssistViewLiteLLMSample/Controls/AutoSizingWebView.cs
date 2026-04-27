@@ -130,9 +130,6 @@ namespace AssistViewLiteLLMSample
         /// <summary>
         /// Wraps the specified HTML fragment in a minimal HTML document structure if it does not already contain an html tag.
         /// </summary>
-        /// <remarks>This method ensures that HTML fragments are rendered consistently by providing a
-        /// standard document structure, including viewport and basic styling. If the input is null, empty, or
-        /// whitespace, an empty HTML document is returned.</remarks>
         /// <param name="html">The HTML content to wrap. May be a full HTML document or a fragment.</param>
         /// <returns>A complete HTML document containing the original content if it was a fragment; otherwise, the original HTML if it already contains an html tag.</returns>
         private static string WrapHtml(string html)
