@@ -7,6 +7,9 @@ namespace AssistViewLiteLLMSample
     /// </summary>
     public class ExtendedAssistItem : AssistItem
     {
+        /// <summary>
+        /// Field to store the HTML-rendered version of the response text, which can be used for displaying Markdown-formatted content in the UI.
+        /// </summary>
         private string _htmlText = string.Empty;
 
         /// <summary>

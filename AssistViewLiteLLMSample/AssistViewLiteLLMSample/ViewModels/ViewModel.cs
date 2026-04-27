@@ -303,7 +303,6 @@ public class GettingStartedViewModel : INotifyPropertyChanged
 #endif
     }
 
-
     /// <summary>
     /// Cleans response text by removing markdown code fences and normalizing whitespace.
     /// </summary>
