@@ -1,0 +1,26 @@
+# LiteLLM proxy configuration
+# Start the proxy with:
+#   cd d:\Content_Team_Blogs\AssistViewLiteLLMSample
+#   .\.venv\Scripts\litellm.exe --config .\config.yaml --port 4000 --debug
+
+model_list:
+  # Azure OpenAI - GPT-4.1
+  - model_name: azure-gpt-4.1
+    litellm_params:
+      model: azure/gpt-4.1                        # MUST include azure/ prefix
+      api_base: "Enter_API_Base"  
+      api_key: "Enter_API_Key"
+      api_version: "Enter_API_Version"
+
+  # Azure OpenAI - GPT-4.1-mini
+  - model_name: gpt-4.1-mini
+    litellm_params:
+      model: azure/gpt-4.1-mini                   # MUST include azure/ prefix
+      api_base: "Enter_API_Base"  
+      api_key: "Enter_API_Key"
+      api_version: "Enter_API_Version"
+
+litellm_settings:
+  num_retries: 2
+  timeout: 300
+  enable_router_logging: true
